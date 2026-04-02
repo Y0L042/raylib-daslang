@@ -1147,10 +1147,11 @@ def main():
         "raylib.das"
     )
     
+    # TODO Prevent writing to raylib.das and raylib_helper.das
     # Only update if the file exists (don't create if missing; require manual setup)
-    if os.path.exists(possible_das_path):
-        update_raylib_das(possible_das_path, das_additions)
-        print(f"  Updated {possible_das_path}")
+    # if os.path.exists(possible_das_path):
+    #     update_raylib_das(possible_das_path, das_additions)
+    #     print(f"  Updated {possible_das_path}")
 
     def write(name, content):
         path = os.path.join(out_dir, name)
