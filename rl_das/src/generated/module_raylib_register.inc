@@ -29,9 +29,6 @@ addEnumeration(das::make_smart<EnumerationNPatchLayout>());
 
 addAnnotation(das::make_smart<RaylibAutomationEventAnnotation>(lib));
 addAnnotation(das::make_smart<RaylibAutomationEventListAnnotation>(lib));
-// Camera2D/Camera3D are registered earlier in module_raylib.cpp to ensure they exist before addExtern bindings that use Camera3D.
-// addAnnotation(das::make_smart<RaylibCamera2DAnnotation>(lib));
-// addAnnotation(das::make_smart<RaylibCamera3DAnnotation>(lib));
 addAnnotation(das::make_smart<RaylibFilePathListAnnotation>(lib));
 addAnnotation(das::make_smart<RaylibModelSkeletonAnnotation>(lib));
 addAnnotation(das::make_smart<RaylibVrDeviceInfoAnnotation>(lib));

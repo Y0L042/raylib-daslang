@@ -32,6 +32,9 @@ EXTRA_STRUCT_TYPES = {
     "FilePathList", "AutomationEvent", "AutomationEventList", "ModelSkeleton",
 }
 
+# Types that should be emitted to annotations, but not registered in module_raylib.cpp.
+REGISTER_EXCLUDED_STRUCT_TYPES = {"Camera3D", "Camera2D"}
+
 ALL_KNOWN_TYPES = HANDWRITTEN_TYPES | EXTRA_STRUCT_TYPES
 
 # C typedef aliases that map to known types
@@ -827,7 +830,7 @@ def gen_annotations_inc(extra_structs: list, opaque_struct_names: set = None, st
     if struct_fields_map is None:
         struct_fields_map = {}
     
-    # Filter out hand-written types
+    # Filter out hand-written types only
     auto_structs = [s for s in extra_structs if s not in HANDWRITTEN_TYPES]
     
     lines = [
@@ -908,7 +911,10 @@ def gen_register_inc(enums: list, functions: list, extra_structs: list, opaque_s
     lines.append("")
 
     # Extra struct annotation registrations (only auto-generated, not hand-written)
-    auto_structs = [s for s in extra_structs if s not in HANDWRITTEN_TYPES]
+    auto_structs = [
+        s for s in extra_structs
+        if s not in HANDWRITTEN_TYPES and s not in REGISTER_EXCLUDED_STRUCT_TYPES
+    ]
     if auto_structs:
         lines.append("// --- Extra struct annotation registrations ---")
         lines.append("")
