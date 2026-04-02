@@ -28,168 +28,218 @@ options gen2
 // WINDOW HELPERS
 // ============================================================================
 
-def window_should_close() : bool
+def window_should_close() : bool {
     return WindowShouldClose()
+}
 
-def is_window_ready() : bool
+def is_window_ready() : bool {
     return IsWindowReady()
+}
 
-def is_window_focused() : bool
+def is_window_focused() : bool {
     return IsWindowFocused()
+}
 
-def is_window_minimized() : bool
+def is_window_minimized() : bool {
     return IsWindowMinimized()
+}
 
-def is_window_maximized() : bool
+def is_window_maximized() : bool {
     return IsWindowMaximized()
+}
 
-def is_window_hidden() : bool
+def is_window_hidden() : bool {
     return IsWindowHidden()
+}
 
-def is_window_fullscreen() : bool
+def is_window_fullscreen() : bool {
     return IsWindowFullscreen()
+}
 
-def get_screen_width() : int
+def get_screen_width() : int {
     return GetScreenWidth()
+}
 
-def get_screen_height() : int
+def get_screen_height() : int {
     return GetScreenHeight()
+}
 
 // ============================================================================
 // DRAWING HELPERS
 // ============================================================================
 
-def begin_drawing()
+def begin_drawing() {
     BeginDrawing()
+}
 
-def end_drawing()
+def end_drawing() {
     EndDrawing()
+}
 
-def clear_background(color : Color)
+def clear_background(color : Color) {
     ClearBackground(color)
+}
 
-def draw_fps(posX : int; posY : int)
+def draw_fps(posX : int; posY : int) {
     DrawFPS(posX, posY)
+}
 
-def draw_text(text : string; posX : int; posY : int; fontSize : int; color : Color)
+def draw_text(text : string; posX : int; posY : int; fontSize : int; color : Color) {
     DrawText(text, posX, posY, fontSize, color)
+}
 
-def draw_rectangle(posX : int; posY : int; width : int; height : int; color : Color)
+def draw_rectangle(posX : int; posY : int; width : int; height : int; color : Color) {
     DrawRectangle(posX, posY, width, height, color)
+}
 
-def draw_rectangle_lines(posX : int; posY : int; width : int; height : int; color : Color)
+def draw_rectangle_lines(posX : int; posY : int; width : int; height : int; color : Color) {
     DrawRectangleLines(posX, posY, width, height, color)
+}
 
-def draw_circle(centerX : int; centerY : int; radius : float; color : Color)
+def draw_circle(centerX : int; centerY : int; radius : float; color : Color) {
     DrawCircle(centerX, centerY, radius, color)
+}
 
-def draw_circle_lines(centerX : int; centerY : int; radius : float; color : Color)
+def draw_circle_lines(centerX : int; centerY : int; radius : float; color : Color) {
     DrawCircleLines(centerX, centerY, radius, color)
+}
 
-def draw_line(startX : int; startY : int; endX : int; endY : int; color : Color)
+def draw_line(startX : int; startY : int; endX : int; endY : int; color : Color) {
     DrawLine(startX, startY, endX, endY, color)
+}
 
-def draw_line_v(startPos : Vector2; endPos : Vector2; color : Color)
+def draw_line_v(startPos : Vector2; endPos : Vector2; color : Color) {
     DrawLineV(startPos, endPos, color)
+}
 
-def draw_pixel(posX : int; posY : int; color : Color)
+def draw_pixel(posX : int; posY : int; color : Color) {
     DrawPixel(posX, posY, color)
+}
 
 // ============================================================================
 // INPUT HELPERS
 // ============================================================================
 
-def is_key_pressed(key : int) : bool
+def is_key_pressed(key : int) : bool {
     return IsKeyPressed(key)
+}
 
-def is_key_down(key : int) : bool
+def is_key_down(key : int) : bool {
     return IsKeyDown(key)
+}
 
-def is_key_released(key : int) : bool
+def is_key_released(key : int) : bool {
     return IsKeyReleased(key)
+}
 
-def is_key_up(key : int) : bool
+def is_key_up(key : int) : bool {
     return IsKeyUp(key)
+}
 
-def get_key_pressed() : int
+def get_key_pressed() : int {
     return GetKeyPressed()
+}
 
-def is_mouse_button_pressed(button : int) : bool
+def is_mouse_button_pressed(button : int) : bool {
     return IsMouseButtonPressed(button)
+}
 
-def is_mouse_button_down(button : int) : bool
+def is_mouse_button_down(button : int) : bool {
     return IsMouseButtonDown(button)
+}
 
-def is_mouse_button_released(button : int) : bool
+def is_mouse_button_released(button : int) : bool {
     return IsMouseButtonReleased(button)
+}
 
-def get_mouse_position() : Vector2
+def get_mouse_position() : Vector2 {
     return GetMousePosition()
+}
 
-def get_mouse_x() : int
+def get_mouse_x() : int {
     return GetMouseX()
+}
 
-def get_mouse_y() : int
+def get_mouse_y() : int {
     return GetMouseY()
+}
 
 // ============================================================================
 // TIMING HELPERS
 // ============================================================================
 
-def get_frame_time() : float
+def get_frame_time() : float {
     return GetFrameTime()
+}
 
-def get_time() : double
+def get_time() : double {
     return GetTime()
+}
 
-def get_fps() : int
+def get_fps() : int {
     return GetFPS()
+}
 
 // ============================================================================
 // RESOURCE HELPERS (string-argument convenience wrappers)
 // ============================================================================
 
-def load_texture(fileName : string) : Texture2D
+def load_texture(fileName : string) : Texture2D {
     return LoadTexture(fileName)
+}
 
-def unload_texture(texture : Texture2D)
+def unload_texture(texture : Texture2D) {
     UnloadTexture(texture)
+}
 
-def load_image(fileName : string) : Image
+def load_image(fileName : string) : Image {
     return LoadImage(fileName)
+}
 
-def unload_image(image : Image)
+def unload_image(image : Image) {
     UnloadImage(image)
+}
 
-def load_sound(fileName : string) : Sound
+def load_sound(fileName : string) : Sound {
     return LoadSound(fileName)
+}
 
-def unload_sound(sound : Sound)
+def unload_sound(sound : Sound) {
     UnloadSound(sound)
+}
 
-def load_music_stream(fileName : string) : Music
+def load_music_stream(fileName : string) : Music {
     return LoadMusicStream(fileName)
+}
 
-def unload_music_stream(music : Music)
+def unload_music_stream(music : Music) {
     UnloadMusicStream(music)
+}
 
-def load_font(fileName : string) : Font
+def load_font(fileName : string) : Font {
     return LoadFont(fileName)
+}
 
-def unload_font(font : Font)
+def unload_font(font : Font) {
     UnloadFont(font)
+}
 
-def load_shader(vsFileName : string; fsFileName : string) : Shader
+def load_shader(vsFileName : string; fsFileName : string) : Shader {
     return LoadShader(vsFileName, fsFileName)
+}
 
-def unload_shader(shader : Shader)
+def unload_shader(shader : Shader) {
     UnloadShader(shader)
+}
 
-def load_model(fileName : string) : Model
+def load_model(fileName : string) : Model {
     return LoadModel(fileName)
+}
 
-def unload_model(model : Model)
+def unload_model(model : Model) {
     UnloadModel(model)
+}
+
 // BEGIN GENERATED TYPEDEFS
 
 
