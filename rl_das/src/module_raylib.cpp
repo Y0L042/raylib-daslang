@@ -14,22 +14,20 @@
 
 // ─── Hand-written annotations for manually-registered raylib types ───────────
 MAKE_TYPE_FACTORY(Vector2, Vector2);
-struct RaylibVector2Annotation : das::ManagedStructureAnnotation<Vector2>
+struct RaylibVector2Annotation : das::ManagedStructureAnnotation<Vector2, false>
 {
     RaylibVector2Annotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Vector2", lib)
     {
-        this->cppName = "Vector2";
         addField<DAS_BIND_MANAGED_FIELD(x)>("x", "x");
         addField<DAS_BIND_MANAGED_FIELD(y)>("y", "y");
     }
 };
 
 MAKE_TYPE_FACTORY(Vector3, Vector3);
-struct RaylibVector3Annotation : das::ManagedStructureAnnotation<Vector3>
+struct RaylibVector3Annotation : das::ManagedStructureAnnotation<Vector3, false>
 {
     RaylibVector3Annotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Vector3", lib)
     {
-        this->cppName = "Vector3";
         addField<DAS_BIND_MANAGED_FIELD(x)>("x", "x");
         addField<DAS_BIND_MANAGED_FIELD(y)>("y", "y");
         addField<DAS_BIND_MANAGED_FIELD(z)>("z", "z");
@@ -37,11 +35,10 @@ struct RaylibVector3Annotation : das::ManagedStructureAnnotation<Vector3>
 };
 
 MAKE_TYPE_FACTORY(Vector4, Vector4);
-struct RaylibVector4Annotation : das::ManagedStructureAnnotation<Vector4>
+struct RaylibVector4Annotation : das::ManagedStructureAnnotation<Vector4, false>
 {
     RaylibVector4Annotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Vector4", lib)
     {
-        this->cppName = "Vector4";
         addField<DAS_BIND_MANAGED_FIELD(x)>("x", "x");
         addField<DAS_BIND_MANAGED_FIELD(y)>("y", "y");
         addField<DAS_BIND_MANAGED_FIELD(z)>("z", "z");
@@ -52,11 +49,10 @@ struct RaylibVector4Annotation : das::ManagedStructureAnnotation<Vector4>
 // NOTE: Matrix is already defined in daScript, so we don't redefine it
 
 MAKE_TYPE_FACTORY(Color, Color);
-struct RaylibColorAnnotation : das::ManagedStructureAnnotation<Color>
+struct RaylibColorAnnotation : das::ManagedStructureAnnotation<Color, false>
 {
     RaylibColorAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Color", lib)
     {
-        this->cppName = "Color";
         addField<DAS_BIND_MANAGED_FIELD(r)>("r", "r");
         addField<DAS_BIND_MANAGED_FIELD(g)>("g", "g");
         addField<DAS_BIND_MANAGED_FIELD(b)>("b", "b");
@@ -65,11 +61,10 @@ struct RaylibColorAnnotation : das::ManagedStructureAnnotation<Color>
 };
 
 MAKE_TYPE_FACTORY(Rectangle, Rectangle);
-struct RaylibRectangleAnnotation : das::ManagedStructureAnnotation<Rectangle>
+struct RaylibRectangleAnnotation : das::ManagedStructureAnnotation<Rectangle, false>
 {
     RaylibRectangleAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Rectangle", lib)
     {
-        this->cppName = "Rectangle";
         addField<DAS_BIND_MANAGED_FIELD(x)>("x", "x");
         addField<DAS_BIND_MANAGED_FIELD(y)>("y", "y");
         addField<DAS_BIND_MANAGED_FIELD(width)>("width", "width");
@@ -78,11 +73,10 @@ struct RaylibRectangleAnnotation : das::ManagedStructureAnnotation<Rectangle>
 };
 
 MAKE_TYPE_FACTORY(Image, Image);
-struct RaylibImageAnnotation : das::ManagedStructureAnnotation<Image>
+struct RaylibImageAnnotation : das::ManagedStructureAnnotation<Image, false>
 {
     RaylibImageAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Image", lib)
     {
-        this->cppName = "Image";
         addField<DAS_BIND_MANAGED_FIELD(width)>("width", "width");
         addField<DAS_BIND_MANAGED_FIELD(height)>("height", "height");
         addField<DAS_BIND_MANAGED_FIELD(mipmaps)>("mipmaps", "mipmaps");
@@ -91,11 +85,10 @@ struct RaylibImageAnnotation : das::ManagedStructureAnnotation<Image>
 };
 
 MAKE_TYPE_FACTORY(Texture, Texture);
-struct RaylibTextureAnnotation : das::ManagedStructureAnnotation<Texture>
+struct RaylibTextureAnnotation : das::ManagedStructureAnnotation<Texture, false>
 {
     RaylibTextureAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Texture", lib)
     {
-        this->cppName = "Texture";
         addField<DAS_BIND_MANAGED_FIELD(id)>("id", "id");
         addField<DAS_BIND_MANAGED_FIELD(width)>("width", "width");
         addField<DAS_BIND_MANAGED_FIELD(height)>("height", "height");
@@ -105,21 +98,19 @@ struct RaylibTextureAnnotation : das::ManagedStructureAnnotation<Texture>
 };
 
 MAKE_TYPE_FACTORY(RenderTexture, RenderTexture);
-struct RaylibRenderTextureAnnotation : das::ManagedStructureAnnotation<RenderTexture>
+struct RaylibRenderTextureAnnotation : das::ManagedStructureAnnotation<RenderTexture, false>
 {
     RaylibRenderTextureAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("RenderTexture", lib)
     {
-        this->cppName = "RenderTexture";
         addField<DAS_BIND_MANAGED_FIELD(id)>("id", "id");
     }
 };
 
 MAKE_TYPE_FACTORY(NPatchInfo, NPatchInfo);
-struct RaylibNPatchInfoAnnotation : das::ManagedStructureAnnotation<NPatchInfo>
+struct RaylibNPatchInfoAnnotation : das::ManagedStructureAnnotation<NPatchInfo, false>
 {
     RaylibNPatchInfoAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("NPatchInfo", lib)
     {
-        this->cppName = "NPatchInfo";
         addField<DAS_BIND_MANAGED_FIELD(left)>("left", "left");
         addField<DAS_BIND_MANAGED_FIELD(top)>("top", "top");
         addField<DAS_BIND_MANAGED_FIELD(right)>("right", "right");
@@ -129,11 +120,10 @@ struct RaylibNPatchInfoAnnotation : das::ManagedStructureAnnotation<NPatchInfo>
 };
 
 MAKE_TYPE_FACTORY(GlyphInfo, GlyphInfo);
-struct RaylibGlyphInfoAnnotation : das::ManagedStructureAnnotation<GlyphInfo>
+struct RaylibGlyphInfoAnnotation : das::ManagedStructureAnnotation<GlyphInfo, false>
 {
     RaylibGlyphInfoAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("GlyphInfo", lib)
     {
-        this->cppName = "GlyphInfo";
         addField<DAS_BIND_MANAGED_FIELD(value)>("value", "value");
         addField<DAS_BIND_MANAGED_FIELD(offsetX)>("offsetX", "offsetX");
         addField<DAS_BIND_MANAGED_FIELD(offsetY)>("offsetY", "offsetY");
@@ -142,11 +132,10 @@ struct RaylibGlyphInfoAnnotation : das::ManagedStructureAnnotation<GlyphInfo>
 };
 
 MAKE_TYPE_FACTORY(Font, Font);
-struct RaylibFontAnnotation : das::ManagedStructureAnnotation<Font>
+struct RaylibFontAnnotation : das::ManagedStructureAnnotation<Font, false>
 {
     RaylibFontAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Font", lib)
     {
-        this->cppName = "Font";
         addField<DAS_BIND_MANAGED_FIELD(baseSize)>("baseSize", "baseSize");
         addField<DAS_BIND_MANAGED_FIELD(glyphCount)>("glyphCount", "glyphCount");
         addField<DAS_BIND_MANAGED_FIELD(glyphPadding)>("glyphPadding", "glyphPadding");
@@ -154,140 +143,125 @@ struct RaylibFontAnnotation : das::ManagedStructureAnnotation<Font>
 };
 
 MAKE_TYPE_FACTORY(Mesh, Mesh);
-struct RaylibMeshAnnotation : das::ManagedStructureAnnotation<Mesh>
+struct RaylibMeshAnnotation : das::ManagedStructureAnnotation<Mesh, false>
 {
     RaylibMeshAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Mesh", lib)
     {
-        this->cppName = "Mesh";
         addField<DAS_BIND_MANAGED_FIELD(vertexCount)>("vertexCount", "vertexCount");
         addField<DAS_BIND_MANAGED_FIELD(triangleCount)>("triangleCount", "triangleCount");
     }
 };
 
 MAKE_TYPE_FACTORY(Shader, Shader);
-struct RaylibShaderAnnotation : das::ManagedStructureAnnotation<Shader>
+struct RaylibShaderAnnotation : das::ManagedStructureAnnotation<Shader, false>
 {
     RaylibShaderAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Shader", lib)
     {
-        this->cppName = "Shader";
         addField<DAS_BIND_MANAGED_FIELD(id)>("id", "id");
     }
 };
 
 MAKE_TYPE_FACTORY(MaterialMap, MaterialMap);
-struct RaylibMaterialMapAnnotation : das::ManagedStructureAnnotation<MaterialMap>
+struct RaylibMaterialMapAnnotation : das::ManagedStructureAnnotation<MaterialMap, false>
 {
     RaylibMaterialMapAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("MaterialMap", lib)
     {
-        this->cppName = "MaterialMap";
     }
 };
 
 MAKE_TYPE_FACTORY(Material, Material);
-struct RaylibMaterialAnnotation : das::ManagedStructureAnnotation<Material>
+struct RaylibMaterialAnnotation : das::ManagedStructureAnnotation<Material, false>
 {
     RaylibMaterialAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Material", lib)
     {
-        this->cppName = "Material";
     }
 };
 
 MAKE_TYPE_FACTORY(Transform, Transform);
-struct RaylibTransformAnnotation : das::ManagedStructureAnnotation<Transform>
+struct RaylibTransformAnnotation : das::ManagedStructureAnnotation<Transform, false>
 {
     RaylibTransformAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Transform", lib)
     {
-        this->cppName = "Transform";
     }
 };
 
 MAKE_TYPE_FACTORY(BoneInfo, BoneInfo);
-struct RaylibBoneInfoAnnotation : das::ManagedStructureAnnotation<BoneInfo>
+struct RaylibBoneInfoAnnotation : das::ManagedStructureAnnotation<BoneInfo, false>
 {
     RaylibBoneInfoAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("BoneInfo", lib)
     {
-        this->cppName = "BoneInfo";
     }
 };
 
 MAKE_TYPE_FACTORY(Model, Model);
-struct RaylibModelAnnotation : das::ManagedStructureAnnotation<Model>
+struct RaylibModelAnnotation : das::ManagedStructureAnnotation<Model, false>
 {
     RaylibModelAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Model", lib)
     {
-        this->cppName = "Model";
     }
 };
 
 MAKE_TYPE_FACTORY(ModelAnimation, ModelAnimation);
-struct RaylibModelAnimationAnnotation : das::ManagedStructureAnnotation<ModelAnimation>
+struct RaylibModelAnimationAnnotation : das::ManagedStructureAnnotation<ModelAnimation, false>
 {
     RaylibModelAnimationAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("ModelAnimation", lib)
     {
-        this->cppName = "ModelAnimation";
     }
 };
 
 MAKE_TYPE_FACTORY(Ray, Ray);
-struct RaylibRayAnnotation : das::ManagedStructureAnnotation<Ray>
+struct RaylibRayAnnotation : das::ManagedStructureAnnotation<Ray, false>
 {
     RaylibRayAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Ray", lib)
     {
-        this->cppName = "Ray";
     }
 };
 
 MAKE_TYPE_FACTORY(RayCollision, RayCollision);
-struct RaylibRayCollisionAnnotation : das::ManagedStructureAnnotation<RayCollision>
+struct RaylibRayCollisionAnnotation : das::ManagedStructureAnnotation<RayCollision, false>
 {
     RaylibRayCollisionAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("RayCollision", lib)
     {
-        this->cppName = "RayCollision";
     }
 };
 
 MAKE_TYPE_FACTORY(BoundingBox, BoundingBox);
-struct RaylibBoundingBoxAnnotation : das::ManagedStructureAnnotation<BoundingBox>
+struct RaylibBoundingBoxAnnotation : das::ManagedStructureAnnotation<BoundingBox, false>
 {
     RaylibBoundingBoxAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("BoundingBox", lib)
     {
-        this->cppName = "BoundingBox";
     }
 };
 
 MAKE_TYPE_FACTORY(Wave, Wave);
-struct RaylibWaveAnnotation : das::ManagedStructureAnnotation<Wave>
+struct RaylibWaveAnnotation : das::ManagedStructureAnnotation<Wave, false>
 {
     RaylibWaveAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Wave", lib)
     {
-        this->cppName = "Wave";
     }
 };
 
 MAKE_TYPE_FACTORY(AudioStream, AudioStream);
-struct RaylibAudioStreamAnnotation : das::ManagedStructureAnnotation<AudioStream>
+struct RaylibAudioStreamAnnotation : das::ManagedStructureAnnotation<AudioStream, false>
 {
     RaylibAudioStreamAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("AudioStream", lib)
     {
-        this->cppName = "AudioStream";
     }
 };
 
 MAKE_TYPE_FACTORY(Sound, Sound);
-struct RaylibSoundAnnotation : das::ManagedStructureAnnotation<Sound>
+struct RaylibSoundAnnotation : das::ManagedStructureAnnotation<Sound, false>
 {
     RaylibSoundAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Sound", lib)
     {
-        this->cppName = "Sound";
     }
 };
 
 MAKE_TYPE_FACTORY(Music, Music);
-struct RaylibMusicAnnotation : das::ManagedStructureAnnotation<Music>
+struct RaylibMusicAnnotation : das::ManagedStructureAnnotation<Music, false>
 {
     RaylibMusicAnnotation(das::ModuleLibrary &lib) : ManagedStructureAnnotation("Music", lib)
     {
-        this->cppName = "Music";
     }
 };
 
@@ -525,35 +499,35 @@ class Module_raylib : public das::Module
         addBuiltinDependency(lib, require("math"));
 
         // ── Hand-registered struct annotations ──────────────────────────────
-        addAnnotation(das::make_smart<RaylibVector2Annotation>(lib));
-        addAnnotation(das::make_smart<RaylibVector3Annotation>(lib));
-        addAnnotation(das::make_smart<RaylibVector4Annotation>(lib));
+        addAnnotation(new RaylibVector2Annotation(lib));
+        addAnnotation(new RaylibVector3Annotation(lib));
+        addAnnotation(new RaylibVector4Annotation(lib));
         // NOTE: Matrix is already defined in daScript, no need to re-register
-        addAnnotation(das::make_smart<RaylibColorAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibRectangleAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibImageAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibTextureAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibRenderTextureAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibNPatchInfoAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibGlyphInfoAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibFontAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibMeshAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibShaderAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibMaterialMapAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibMaterialAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibTransformAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibBoneInfoAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibModelAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibModelAnimationAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibRayAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibRayCollisionAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibBoundingBoxAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibWaveAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibAudioStreamAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibSoundAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibMusicAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibCamera2DAnnotation>(lib));
-        addAnnotation(das::make_smart<RaylibCamera3DAnnotation>(lib));
+        addAnnotation(new RaylibColorAnnotation(lib));
+        addAnnotation(new RaylibRectangleAnnotation(lib));
+        addAnnotation(new RaylibImageAnnotation(lib));
+        addAnnotation(new RaylibTextureAnnotation(lib));
+        addAnnotation(new RaylibRenderTextureAnnotation(lib));
+        addAnnotation(new RaylibNPatchInfoAnnotation(lib));
+        addAnnotation(new RaylibGlyphInfoAnnotation(lib));
+        addAnnotation(new RaylibFontAnnotation(lib));
+        addAnnotation(new RaylibMeshAnnotation(lib));
+        addAnnotation(new RaylibShaderAnnotation(lib));
+        addAnnotation(new RaylibMaterialMapAnnotation(lib));
+        addAnnotation(new RaylibMaterialAnnotation(lib));
+        addAnnotation(new RaylibTransformAnnotation(lib));
+        addAnnotation(new RaylibBoneInfoAnnotation(lib));
+        addAnnotation(new RaylibModelAnnotation(lib));
+        addAnnotation(new RaylibModelAnimationAnnotation(lib));
+        addAnnotation(new RaylibRayAnnotation(lib));
+        addAnnotation(new RaylibRayCollisionAnnotation(lib));
+        addAnnotation(new RaylibBoundingBoxAnnotation(lib));
+        addAnnotation(new RaylibWaveAnnotation(lib));
+        addAnnotation(new RaylibAudioStreamAnnotation(lib));
+        addAnnotation(new RaylibSoundAnnotation(lib));
+        addAnnotation(new RaylibMusicAnnotation(lib));
+        addAnnotation(new RaylibCamera2DAnnotation(lib));
+        addAnnotation(new RaylibCamera3DAnnotation(lib));
 
         // ── Construction helpers (struct returns need CopyOrMove) ─────────────
         das::addExtern<DAS_BIND_FUN(raylib_make_vector2), das::SimNode_ExtFuncCallAndCopyOrMove>(
@@ -674,3 +648,4 @@ class Module_raylib : public das::Module
 };
 
 REGISTER_MODULE(Module_raylib);
+REGISTER_DYN_MODULE(Module_raylib, Module_raylib);

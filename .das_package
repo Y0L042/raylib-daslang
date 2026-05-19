@@ -1,0 +1,25 @@
+options gen2
+require daslib/daspkg
+
+[export]
+def package() {
+    package_name("dasRaylib")
+    package_description("Raylib bindings for Daslang — full RLAPI, enums, and types")
+}
+
+[export]
+def build() {
+    cmake_build()
+}
+
+[export]
+def release() {
+    let p = get_platform_name()
+    if p == "windows" {
+        release_include_dll("raylib.dll")
+    } elif p == "darwin" {
+        release_include_dll("libraylib.dylib")
+    } else {
+        release_include_dll("libraylib.so")
+    }
+}

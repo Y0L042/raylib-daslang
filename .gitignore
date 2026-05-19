@@ -30,12 +30,17 @@ flecs_das/vendor/daslang/
 
 # Build directories
 /build/
+/_build/
 /bin/
 /Debug/
 /Release/
 /dist/
 **/build_archive/
 **/Archive-windows-x86_64/
+
+# daspkg artifacts
+daspkg.lock
+dasModuleRaylib.shared_module
 
 # IDE and editor-specific files
 .vscode/

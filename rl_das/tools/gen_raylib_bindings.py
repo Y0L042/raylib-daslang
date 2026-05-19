@@ -868,18 +868,16 @@ def gen_annotations_inc(extra_structs: list, opaque_struct_names: set = None, st
             ann_name = f"Raylib{struct_name}Annotation"
             lines += [
                 f"MAKE_TYPE_FACTORY({struct_name}, {struct_name})",
-                f"struct {ann_name} : das::ManagedStructureAnnotation<{struct_name}> {{",
+                f"struct {ann_name} : das::ManagedStructureAnnotation<{struct_name}, false> {{",
                 f"    {ann_name}(das::ModuleLibrary &lib)",
                 f"        : ManagedStructureAnnotation(\"{struct_name}\", lib) {{",
-                f"        this->cppName = \"{struct_name}\";",
             ]
-            
+
             # Add field bindings if available
             if struct_name in struct_fields_map:
-                lines.append("")
                 field_lines = gen_struct_fields_in_annotation(struct_name, struct_fields_map[struct_name])
                 lines.extend(field_lines)
-            
+
             lines += [
                 f"    }}",
                 f"}};",
@@ -907,7 +905,7 @@ def gen_register_inc(enums: list, functions: list, extra_structs: list, opaque_s
     lines.append("// --- Enum registrations ---")
     lines.append("")
     for enum_name, _ in enums:
-        lines.append(f"addEnumeration(das::make_smart<Enumeration{enum_name}>());")
+        lines.append(f"addEnumeration(new Enumeration{enum_name}());")
     lines.append("")
 
     # Extra struct annotation registrations (only auto-generated, not hand-written)
@@ -922,9 +920,9 @@ def gen_register_inc(enums: list, functions: list, extra_structs: list, opaque_s
             ann_name = f"Raylib{struct_name}Annotation"
             # Opaque types don't need lib parameter
             if struct_name in opaque_struct_names:
-                lines.append(f"addAnnotation(das::make_smart<{ann_name}>());")
+                lines.append(f"addAnnotation(new {ann_name}());")
             else:
-                lines.append(f"addAnnotation(das::make_smart<{ann_name}>(lib));")
+                lines.append(f"addAnnotation(new {ann_name}(lib));")
         lines.append("")
 
     # Function registrations

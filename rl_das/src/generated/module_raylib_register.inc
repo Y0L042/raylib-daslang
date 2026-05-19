@@ -3,36 +3,36 @@
 
 // --- Enum registrations ---
 
-addEnumeration(das::make_smart<EnumerationConfigFlags>());
-addEnumeration(das::make_smart<EnumerationTraceLogLevel>());
-addEnumeration(das::make_smart<EnumerationKeyboardKey>());
-addEnumeration(das::make_smart<EnumerationMouseButton>());
-addEnumeration(das::make_smart<EnumerationMouseCursor>());
-addEnumeration(das::make_smart<EnumerationGamepadButton>());
-addEnumeration(das::make_smart<EnumerationGamepadAxis>());
-addEnumeration(das::make_smart<EnumerationMaterialMapIndex>());
-addEnumeration(das::make_smart<EnumerationShaderLocationIndex>());
-addEnumeration(das::make_smart<EnumerationShaderUniformDataType>());
-addEnumeration(das::make_smart<EnumerationShaderAttributeDataType>());
-addEnumeration(das::make_smart<EnumerationPixelFormat>());
-addEnumeration(das::make_smart<EnumerationTextureFilter>());
-addEnumeration(das::make_smart<EnumerationTextureWrap>());
-addEnumeration(das::make_smart<EnumerationCubemapLayout>());
-addEnumeration(das::make_smart<EnumerationFontType>());
-addEnumeration(das::make_smart<EnumerationBlendMode>());
-addEnumeration(das::make_smart<EnumerationGesture>());
-addEnumeration(das::make_smart<EnumerationCameraMode>());
-addEnumeration(das::make_smart<EnumerationCameraProjection>());
-addEnumeration(das::make_smart<EnumerationNPatchLayout>());
+addEnumeration(new EnumerationConfigFlags());
+addEnumeration(new EnumerationTraceLogLevel());
+addEnumeration(new EnumerationKeyboardKey());
+addEnumeration(new EnumerationMouseButton());
+addEnumeration(new EnumerationMouseCursor());
+addEnumeration(new EnumerationGamepadButton());
+addEnumeration(new EnumerationGamepadAxis());
+addEnumeration(new EnumerationMaterialMapIndex());
+addEnumeration(new EnumerationShaderLocationIndex());
+addEnumeration(new EnumerationShaderUniformDataType());
+addEnumeration(new EnumerationShaderAttributeDataType());
+addEnumeration(new EnumerationPixelFormat());
+addEnumeration(new EnumerationTextureFilter());
+addEnumeration(new EnumerationTextureWrap());
+addEnumeration(new EnumerationCubemapLayout());
+addEnumeration(new EnumerationFontType());
+addEnumeration(new EnumerationBlendMode());
+addEnumeration(new EnumerationGesture());
+addEnumeration(new EnumerationCameraMode());
+addEnumeration(new EnumerationCameraProjection());
+addEnumeration(new EnumerationNPatchLayout());
 
 // --- Extra struct annotation registrations ---
 
-addAnnotation(das::make_smart<RaylibAutomationEventAnnotation>(lib));
-addAnnotation(das::make_smart<RaylibAutomationEventListAnnotation>(lib));
-addAnnotation(das::make_smart<RaylibFilePathListAnnotation>(lib));
-addAnnotation(das::make_smart<RaylibModelSkeletonAnnotation>(lib));
-addAnnotation(das::make_smart<RaylibVrDeviceInfoAnnotation>(lib));
-addAnnotation(das::make_smart<RaylibVrStereoConfigAnnotation>(lib));
+addAnnotation(new RaylibAutomationEventAnnotation(lib));
+addAnnotation(new RaylibAutomationEventListAnnotation(lib));
+addAnnotation(new RaylibFilePathListAnnotation(lib));
+addAnnotation(new RaylibModelSkeletonAnnotation(lib));
+addAnnotation(new RaylibVrDeviceInfoAnnotation(lib));
+addAnnotation(new RaylibVrStereoConfigAnnotation(lib));
 
 // --- Function registrations ---
 
